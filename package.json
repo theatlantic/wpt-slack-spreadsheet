@@ -1,5 +1,5 @@
 {
-  "name": "wpt-slack",
+  "name": "wpt-slack-spreadsheet",
   "version": "0.0.1",
   "description": "WebpageTest Results in Slack",
   "main": "index.js",
