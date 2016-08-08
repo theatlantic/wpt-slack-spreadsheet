@@ -2,7 +2,7 @@
 'use strict';
 
 // package modules
-const assert  = require('chai').assert;
+const assert = require('chai').assert;
 
 // custom modules
 const f = require('../lib/format');

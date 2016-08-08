@@ -38,6 +38,12 @@ node index.js \
 --mobile=true
  ```
 
+### Test
+
+To run ESLint and Mocha:
+
+`npm test`
+
 ### Todo
 
 - Remove `config` module and opt for CLI config
