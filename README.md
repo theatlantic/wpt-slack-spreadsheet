@@ -42,5 +42,6 @@ node index.js \
 
 - Remove `config` module and opt for CLI config
 - Smart WPT defaults and merge with a CLI config
-- Tests
+- Async tests?
+- NPM module?
 - ¯\\\_(ツ)_/¯
