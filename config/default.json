@@ -1,0 +1,7 @@
+{
+  "apiKey": "<WPT_API_KEY>",
+  "wptHost": "https://www.webpagetest.org/",
+  "spreadsheetId": "<SPREADSHEET_ID>",
+  "webhookUrl": "<SLACK_INCOMING_WEBHOOK_URL>",
+  "channel": "#general"
+}
