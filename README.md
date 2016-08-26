@@ -26,7 +26,7 @@ Fill in the values in `config/default.json`.
 When the configuration is all setup and the dependencies are installed,
  everything should work by running:
 
- ```
+ ```bash
 # url: The URL to profile
 # creds: A JSON file with the Google Spreadsheet API credentials
 # tab: The tab index of the spreadsheet
