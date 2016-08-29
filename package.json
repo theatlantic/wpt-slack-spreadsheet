@@ -8,6 +8,9 @@
     "lint": "./node_modules/.bin/eslint ./lib",
     "test": "npm run lint && npm run coverage"
   },
+  "pre-commit": [
+    "test"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,6 +26,7 @@
     "chai": "^3.5.0",
     "eslint": "^3.2.2",
     "istanbul": "^0.4.4",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "pre-commit": "^1.1.3"
   }
 }
