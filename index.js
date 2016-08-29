@@ -8,7 +8,6 @@ const winston = require('winston');
 const wpt = require('./lib/wpt');
 const slack = require('./lib/slack');
 const spreadsheet = require('./lib/spreadsheet');
-const timeout = require('./lib/timeout');
 
 winston.info('START');
 
@@ -17,8 +16,8 @@ winston.info('START');
  */
 wpt.handleWPT((err, results) => {
   if (err) {
-    results = timeout;
     winston.error(err);
+    return;
   }
 
   winston.info('Finished running WPT');
