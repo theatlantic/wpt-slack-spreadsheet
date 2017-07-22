@@ -6,6 +6,7 @@ const winston = require('winston');
 
 // custom modules
 const wpt = require('./lib/wpt');
+const psi = require('./lib/psi');
 const slack = require('./lib/slack');
 const spreadsheet = require('./lib/spreadsheet');
 
@@ -14,7 +15,11 @@ winston.info('START');
 /*
  * init app
  */
-wpt.handleWPT((err, results) => {
+async.parallel([
+  psi.handlePSI,
+  wpt.handleWPT
+], (err, results) => {
+
   if (err) {
     winston.error(err);
     return;
@@ -22,14 +27,15 @@ wpt.handleWPT((err, results) => {
 
   winston.info('Finished running WPT');
 
+  const data = Object.assign({}, ...results);
   async.parallel([
     (cb) => {
       winston.info('Sending to Google Spreadsheet');
-      spreadsheet.handleResults(results, cb);
+      spreadsheet.handleResults(data, cb);
     },
     (cb) => {
       winston.info('Sending to Slack');
-      slack.sendToSlack(results, cb);
+      slack.sendToSlack(data, cb);
     }
   ], () => {
     winston.info('DONE');
