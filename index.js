@@ -37,7 +37,12 @@ async.parallel([
       winston.info('Sending to Slack');
       slack.sendToSlack(data, cb);
     }
-  ], () => {
+  ], (err, res) => {
+    if (err) {
+      winston.error(err);
+      return;
+    }
+    
     winston.info('DONE');
   });
 });
